@@ -54,28 +54,8 @@ with col1:
         if input_text.strip():  # Check if the input is not empty
             with st.spinner("Processing your text..."):
                 response = get_gemini_response(f"{input_prompt}\n\n{input_text}")
-                st.session_state.response = response  # Store response in session state
                 st.subheader("Corrected Response:")
-                
-                # Create a container for the response and copy button
-                response_container = st.container()
-                with response_container:
-                    st.write(response)
-                    
-                    # Add copy button with custom styling
-                    st.markdown("""
-                        <style>
-                        .stButton button {
-                            width: 100%;
-                            background-color: #4CAF50;
-                            color: white;
-                        }
-                        </style>
-                    """, unsafe_allow_html=True)
-                    
-                    if st.button("📋 Copy to Clipboard"):
-                        st.write('<script>navigator.clipboard.writeText(`' + response.replace('`', '\\`') + '`);</script>', unsafe_allow_html=True)
-                        st.success("Copied to clipboard!")
+                st.write(response)
         else:
             st.warning("Please paste a paragraph to transcribe.")
 
@@ -83,23 +63,8 @@ with col1:
 with col2:
     if st.button("Clear Input"):
         st.session_state.input_text = ""
-        if 'response' in st.session_state:
-            del st.session_state.response
         st.experimental_rerun()
 
 # Add footer
 st.markdown("---")
 st.markdown("Made with ❤️ using Streamlit and Google Gemini-Pro")
-
-# Add JavaScript for clipboard functionality
-st.markdown("""
-<script>
-function copyToClipboard(text) {
-    navigator.clipboard.writeText(text).then(function() {
-        console.log('Copying to clipboard was successful!');
-    }, function(err) {
-        console.error('Could not copy text: ', err);
-    });
-}
-</script>
-""", unsafe_allow_html=True)
