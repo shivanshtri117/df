@@ -65,6 +65,4 @@ with col2:
         st.session_state.input_text = ""
         st.experimental_rerun()
 
-# Add footer
-st.markdown("---")
-st.markdown("Made with ❤️ using Streamlit and Google Gemini-Pro")
+
