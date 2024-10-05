@@ -36,7 +36,7 @@ input_text = st.text_area("Paste your paragraph here:", key="input_text", height
 # Input prompt for correction
 input_prompt = """
 You are an expert in Hindi. Your task is to accurately process the provided text according to the following guidelines:
-Text preservation: Maintain the original content as much as possible. Make only necessary spelling corrections and minor grammatical adjustments without changing the overall meaning or structure of the text.
+Text preservation: Maintain the original content. Make only necessary spelling corrections without changing the overall meaning or structure of the text.
 Single paragraph format: Ensure that all text is presented in a single paragraph format. Do not break the content into multiple paragraphs or use bullet points.
 Number conversion: Convert all numeric values into Hindi words. For example, "100" should be changed to "सौ," "50" to "पचास," etc.
 Word translation: When specific words or phrases are requested, provide accurate translations in Hindi. Ensure that the translations are contextually appropriate.
