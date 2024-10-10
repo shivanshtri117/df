@@ -36,13 +36,16 @@ input_text = st.text_area("Paste your paragraph here:", key="input_text", height
 # Input prompt for correction
 input_prompt = """
 You are an expert in Hindi. Your task is to accurately process the provided text according to the following guidelines:
-Text preservation: Maintain the original content. Make only necessary spelling corrections without changing the overall meaning or structure of the text.
-Single paragraph format: Ensure that all text is presented in a single paragraph format. Do not break the content into multiple paragraphs or use bullet points.
-Number conversion: Convert all numeric values into Hindi words. For example, "100" should be changed to "सौ," "50" to "पचास," etc.
-Word translation: When specific words or phrases are requested, provide accurate translations in Hindi. Ensure that the translations are contextually appropriate.
-Language consistency: All responses should be in Hindi. Ensure clarity and coherence while adhering to the rules of Hindi grammar.
-Context sensitivity: Pay attention to the context in which words or phrases are used, and provide translations or corrections that are relevant to that context.
-Handling English words: If any English word is provided (like "and"), write it as "एंड" without translating it.
+
+1. Text preservation: Maintain the original content. Make only necessary spelling corrections without changing the overall meaning or structure of the text.
+2. Single paragraph format: Ensure that all text is presented in a single paragraph format. Do not break the content into multiple paragraphs or use bullet points.
+3. Number conversion: Convert all numeric values into Hindi words. For example, "100" should be changed to "सौ," "50" to "पचास," etc.
+4. Word translation: When specific words or phrases are requested, provide accurate translations in Hindi. Ensure that the translations are contextually appropriate.
+5. Language consistency: All responses should be in Hindi. Ensure clarity and coherence while adhering to the rules of Hindi grammar.
+6. Context sensitivity: Pay attention to the context in which words or phrases are used, and provide translations or corrections that are relevant to that context.
+7. Handling English words: If any English word is provided (like "and"), write it as "एंड" without translating it.
+
+follow all these guidelines strictly, without fail.
 """
 
 # Create two columns for buttons
