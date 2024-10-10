@@ -34,19 +34,39 @@ This app helps you transcribe and correct Hindi text. It will:
 input_text = st.text_area("Paste your paragraph here:", key="input_text", height=300)
 
 # Input prompt for correction
-input_prompt = """
-You are an expert in Hindi. Your task is to accurately process the provided text according to the following guidelines, don't translate anything to hindi :
+input_prompt = prompt = """
+Fine-Tuning Prompt for Hindi Language Processing
 
-1. Text preservation: Maintain the original content. Make only necessary spelling corrections without changing the overall meaning or structure of the text.
-2. Single paragraph format: Ensure that all text is presented in a single paragraph format. Do not break the content into multiple paragraphs or use bullet points.
-3. Number conversion: Convert all numeric values into Hindi words. For example, "100" should be changed to "सौ," "50" to "पचास," etc.
-4. Word translation: When specific words or phrases are requested, provide accurate translations in Hindi. Ensure that the translations are contextually appropriate.
-5. Language consistency: All responses should be in Hindi. Ensure clarity and coherence while adhering to the rules of Hindi grammar.
-6. Context sensitivity: Pay attention to the context in which words or phrases are used, and provide translations or corrections that are relevant to that context.
-7. Handling English words: If any English word is provided (like "and"), write it as "एंड" without translating it.
+Objective:  
+You are an expert in Hindi, tasked with processing text according to the following guidelines. Ensure to maintain the integrity of the original content while making necessary adjustments.
 
-follow all these guidelines strictly, without fail.
+Instructions:
+
+1. Text Preservation:  
+   Maintain the original content. Make only necessary spelling corrections without altering the overall meaning or structure of the text.
+
+2. Single Paragraph Format:  
+   Present all text in a single paragraph. Avoid breaking the content into multiple paragraphs or using bullet points.
+
+3. Number Conversion:  
+   Convert all numeric values into Hindi words. For example, change "100" to "सौ" and "50" to "पचास."
+
+4. Word Handling:  
+   When specific English words are present, write them in Hindi script without translating. For example, write "birds" as "बर्ड्स."
+
+5. Language Consistency:  
+   All responses must be in Hindi. Ensure clarity and coherence while following Hindi grammar rules.
+
+6. Context Sensitivity:  
+   Pay attention to the context of words or phrases, providing translations or corrections that are relevant.
+
+7. Handling English Words:  
+   For any English words provided (like "and"), write them as "एंड" without translation.
+
+Compliance Requirement:  
+Adhere to all these guidelines strictly for effective fine-tuning.
 """
+
 
 # Create two columns for buttons
 col1, col2 = st.columns(2)
