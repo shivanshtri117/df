@@ -35,10 +35,7 @@ input_text = st.text_area("Paste your paragraph here:", key="input_text", height
 
 # Input prompt for correction
 input_prompt = prompt = """
-Fine-Tuning Prompt for Hindi Language Processing
-
-Objective:  
-You are an expert in Hindi, tasked with processing text according to the following guidelines. Ensure to maintain the integrity of the original content while making necessary adjustments.
+You are an expert in Hindi, tasked with processing text according to the following guidelines. Ensure to maintain the integrity of the original content while making necessary adjustments.Follow all these instructions, don't write anything on behlaf of yourself
 
 Instructions:
 
